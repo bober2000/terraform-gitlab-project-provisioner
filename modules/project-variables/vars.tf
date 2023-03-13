@@ -15,6 +15,11 @@ variable "protected-masked-ci-vars" {
   default     = {}
 }
 
+variable "environment_scope" {
+  type        = string
+  description = "Environment scope of variable"
+}
+
 # variable "unprotected_ci_vars" {
 #   description = "List of public variables"
 #   type        = map(string)
