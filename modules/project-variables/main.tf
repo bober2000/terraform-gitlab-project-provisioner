@@ -7,15 +7,4 @@ resource "gitlab_project_variable" "protected-ci-vars" {
   masked            = each.value.variable-masked
   variable_type     = each.value.variable-type
   project           = var.project
-  masked            = false
-}
-
-resource "gitlab_project_variable" "protected-masked-ci-vars" {
-  for_each          = var.protected-masked-ci-vars
-  environment_scope = each.environment_scope
-  key               = each.key
-  value             = each.value
-  protected         = true
-  project           = var.project
-  masked            = true
 }
