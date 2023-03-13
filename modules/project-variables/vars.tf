@@ -4,24 +4,12 @@ variable "project" {
 }
 
 variable "protected_ci_vars" {
-  description = "List of protected but unmasked variables"
-  type        = map(string)
-  default     = {}
+  description = "map variables"
+  type        = map(object({
+    variable-name = string
+    variable-value = string
+    variable-protected = bool
+    variable-masked = bool
+    variable-type = string
+  }))
 }
-
-variable "protected-masked-ci-vars" {
-  description = "List of protected and masked variables"
-  type        = map(string)
-  default     = {}
-}
-
-variable "environment_scope" {
-  type        = string
-  description = "Environment scope of variable"
-}
-
-# variable "unprotected_ci_vars" {
-#   description = "List of public variables"
-#   type        = map(string)
-#   default = {}
-# }
