@@ -11,5 +11,6 @@ variable "protected_ci_vars" {
     variable-protected = bool
     variable-masked = bool
     variable-type = string
+    variable-env = string
   }))
 }
