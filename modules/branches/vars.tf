@@ -17,3 +17,9 @@ variable "merge_access_level" {
   type        = string
   description = "Path of the repository"
 }
+
+variable "allow_force_push" {
+  type        = bool
+  default     = false
+  description = "Allow force push"
+}
