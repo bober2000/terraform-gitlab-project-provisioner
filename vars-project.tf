@@ -10,6 +10,7 @@ resource "gitlab_branch_protection" "main" {
   branch             = each.key
   push_access_level  = each.value.push_access_level
   merge_access_level = each.value.merge_access_level
+  allow_force_push   = each.value.allow_force_push
   project            = var.project
   depends_on         = [gitlab_project.project]
 }
