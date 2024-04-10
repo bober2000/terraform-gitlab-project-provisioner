@@ -14,3 +14,15 @@ variable "protected_ci_vars" {
     variable-env = string
   }))
 }
+
+variable "static_ci_vars" {
+  description = "map variables"
+  type        = map(object({
+    variable-name = string
+    variable-value = string
+    variable-protected = bool
+    variable-masked = bool
+    variable-type = string
+    variable-env = string
+  }))
+}
