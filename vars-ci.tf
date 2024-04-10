@@ -17,6 +17,19 @@ variable "protected_ci_vars" {
   default     = {}
 }
 
+variable "static_ci_vars" {
+  description = "List of protected but unmasked variables"
+  type        = map(object({
+    variable-name = string
+    variable-value = string
+    variable-protected = bool
+    variable-masked = bool
+    variable-type = string
+    variable-env = string
+  }))
+  default     = {}
+}
+
 variable "scheduled_pipelines" {
   description = "Map of scheduled_pipelines to configuration."
   type        = map
